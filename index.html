@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script
+			  src="https://code.jquery.com/jquery-3.4.1.js"
+			  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+			  crossorigin="anonymous">
+		</script>
+		<link rel="stylesheet" href="style.css"> 
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Rent a car | Welcome</title>
+		
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div id="branding">
+					<img src="img/auticlogo.png">
+				</div>
+				<nav>
+					<div id="navigacija">
+						<ul>
+							<li class="current"><a href="index.html">Pocetna</a></li>
+							<li><a href="vozila.html">Vozila</a></li>
+							<li><a href="usluge.html">Usluga</a></li>
+							<li><a href="kontakt.html">Kontakt</a></li>
+							<div id="prijava">
+								<input id="username" type="text" placeholder="Username">
+								<input id="password" type="password" placeholder="Password">
+								<button id="login-btn" type="submit">Sign in!</button>
+								<button id="modal-btn" class="button">Register</button>
+							</div>
+						</ul>
+					</div>
+					<div>
+						<button id="signOut_btn">Sign Out!</button>
+						<p id="ispis"></p>
+					</div>
+				</nav>
+			</div>
+
+			<div id="my-modal" class="modal">
+				<div class="modal-content">
+					<div class="modal-header">
+						<span class="close">&times;</span>
+						<h2>Registration</h2>
+					</div>
+					<div class="modal-body">
+						<input id="reg_name" type="text" placeholder="Name">
+						<input id="reg_lastname" type="text" placeholder="Last Name">
+						<input id="reg_username" type="text" placeholder="Username">
+						<input id="reg_password" type="password" placeholder="Password">
+						<button id="modal_reg_btn" type="submit">Register</button>
+						<div id="reg_ispis"></div>
+					</div>
+				</div>
+			</div>
+		</header>
+		
+		
+		<section id="showcase">
+			<div class="container">
+				<h1>Affordable rent a car</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+			</div>
+			<section id="search">
+				<div id="search-bar">
+					<h2>Potrazi najam automobila</h2>
+					<div id="pick-up-date">
+						<p>Preuzimanje</p>
+						<input id="date_preuzimanje" type="date">
+					</div>
+					<div id="drop-off-date">
+						<p>Povratak</p>
+						<input id="date_povratak" type="date">
+					</div>
+					<button  id="trazi_najam" type="submit">Search</button>
+				</div>
+			</section>
+		</section>
+		
+		<section id="newsletter">
+			<div class="container">
+				<h1>Subscribe to our newsletter</h1>
+				<form>
+					<input type="email" placeholder="Enter Emial...">
+					<button type="submit" class="button_1">Subscribe</button>
+				</form>
+			</div>
+		</section>
+		<section id="slideshow">
+			<div class="slide" id="slide1">
+			
+			</div>
+			<div class="slide" id="slide2">
+			
+			</div>
+			<div class="slide" id="slide3">
+			
+			</div>
+		</section>
+		
+		<section id="boxes">
+			<div class="container">
+				<div class="box">
+					<img src="./img/audi.png">
+					<h3>Audi</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				</div>
+				<div class="box">
+					<img src="./img/bmw.png">
+					<h3>Bmw</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				</div>
+				<div class="box">
+					<img src="./img/ford.png">
+					<h3>Ford</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<p>Rent a car, Copyright &copy; 2019</p>
+		</footer>
+		<script src="main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script
+			  src="https://code.jquery.com/jquery-3.4.1.js"
+			  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+			  crossorigin="anonymous">
+		</script>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Rent a car | Vozila</title>
+    </head>
+    <body>
+        <header>
+			<div class="container">
+				<div id="branding">
+					<img src="img/auticlogo.png">
+				</div>
+				<nav>
+					<div id="navigacija">
+						<ul>
+							<li class="current"><a href="index.html">Pocetna</a></li>
+							<li><a href="vozila.html">Vozila</a></li>
+							<li><a href="usluge.html">Usluga</a></li>
+							<li><a href="kontakt.html">Kontakt</a></li>
+							<div id="prijava">
+								<input id="username" type="text" placeholder="Username">
+								<input id="password" type="password" placeholder="Password">
+								<button id="login-btn" type="submit">Sign in!</button>
+								<button id="modal-btn" class="button">Register</button>
+							</div>
+						</ul>
+					</div>
+					<div>
+						<button id="signOut_btn">Sign Out!</button>
+						<p id="ispis"></p>
+					</div>
+				</nav>
+			</div>
+
+			<div id="my-modal" class="modal">
+				<div class="modal-content">
+					<div class="modal-header">
+						<span class="close">&times;</span>
+						<h2>Registration</h2>
+					</div>
+					<div class="modal-body">
+						<input id="reg_name" type="text" placeholder="Name">
+						<input id="reg_lastname" type="text" placeholder="Last Name">
+						<input id="reg_username" type="text" placeholder="Username">
+						<input id="reg_password" type="password" placeholder="Password">
+						<button id="modal_reg_btn" type="submit">Register</button>
+						<div id="reg_ispis"></div>
+					</div>
+				</div>
+			</div>
+        </header>
+        <section>
+			<div class="flex-container">
+                <div class="car">
+					<div class="car-img">
+						<img src="./img/car.png">
+					</div>
+					<h3>Nissan GT</h3>
+					<h4>Supercar</h4>
+					<p>5.000din/dan</p>
+					<div id="car-buttons">
+						<i style="font-size:20px" class="fa">&#xf085;</i><p>Automatik</p>
+						<i style="font-size:20px" class="fa">&#xf1b9;</i><p>4 vrata</p>
+						<i style="font-size:20px" class="fa">&#xf007;</i><p>4 osobe</p>
+						<i style="font-size:20px" class="fa">&#xf0f2;</i><p>2 kufera</p>
+						<i style="font-size:20px" class="fa">&#xf2dc;</i><p>Klima</p>
+						<i style='font-size:20px' class='fas'>&#xf52f;</i><p>Benzin</p>
+						<button type="submit" id="rezervacija-auta">Rezervisi</button>
+					</div>
+				</div>
+				<div class="car">
+					<div class="car-img">
+						<img src="./img/car2.png">
+					</div>
+					<h3>Audi TT</h3>
+					<h4>Sport Coupe</h4>
+					<p>4.999din/dan</p>
+					<div id="car-buttons">
+						<i style="font-size:20px" class="fa">&#xf085;</i><p>Manuelni</p>
+						<i style="font-size:20px" class="fa">&#xf1b9;</i><p>2 vrata</p>
+						<i style="font-size:20px" class="fa">&#xf007;</i><p>2 osobe</p>
+						<i style="font-size:20px" class="fa">&#xf0f2;</i><p>1 kufera</p>
+						<i style="font-size:20px" class="fa">&#xf2dc;</i><p>Klima</p>
+						<i style='font-size:20px' class='fas'>&#xf52f;</i><p>Benzin</p>
+						<button type="submit" id="rezervacija-auta">Rezervisi</button>
+					</div>
+				</div>
+				<div class="car">
+					<div class="car-img">
+						<img src="./img/car3.png">
+					</div>
+					<h3>Hyundai</h3>
+					<h4>Pick up</h4>
+					<p>3.999din/dan</p>
+					<div id="car-buttons">
+						<i style="font-size:20px" class="fa">&#xf085;</i><p>Automatik</p>
+						<i style="font-size:20px" class="fa">&#xf1b9;</i><p>4 vrata</p>
+						<i style="font-size:20px" class="fa">&#xf007;</i><p>4 osobe</p>
+						<i style="font-size:20px" class="fa">&#xf0f2;</i><p>3 kufera</p>
+						<i style="font-size:20px" class="fa">&#xf2dc;</i><p>Klima</p>
+						<i style='font-size:20px' class='fas'>&#xf52f;</i><p>Benzin</p>
+						<button type="submit" id="rezervacija-auta">Rezervisi</button>
+					</div>
+				</div>
+				<div class="car">
+					<div class="car-img">
+						<img src="img/car4.png">
+					</div>
+					<h3>BMW X5</h3>
+					<h4>Jeep</h4>
+					<p>6.999din/dan</p>
+					<div id="car-buttons">
+						<i style="font-size:20px" class="fa">&#xf085;</i><p>Automatik</p>
+						<i style="font-size:20px" class="fa">&#xf1b9;</i><p>4 vrata</p>
+						<i style="font-size:20px" class="fa">&#xf007;</i><p>4 osobe</p>
+						<i style="font-size:20px" class="fa">&#xf0f2;</i><p>4 kufera</p>
+						<i style="font-size:20px" class="fa">&#xf2dc;</i><p>Klima</p>
+						<i style='font-size:20px' class='fas'>&#xf52f;</i><p>Dizel</p>
+						<button type="submit" id="rezervacija-auta">Rezervisi</button>
+					</div>
+				</div>
+			</div>
+			
+		</section>
+        <footer>
+			<p>Rent a car, Copyright &copy; 2019</p>
+		</footer>
+		<script src="main.js"></script>
+    </body>
+</html>
