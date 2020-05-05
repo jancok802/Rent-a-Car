@@ -7,12 +7,12 @@
 			  crossorigin="anonymous">
 		</script>
 		<link rel="stylesheet" href="style.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+		<script src='https://kit.fontawesome.com/a076d05399.js'></script> 
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width">
+		<meta name="viewport" content="width=device-width" initial-scale="1.0">
 		<title>Rent a car | Vozila</title>
     </head>
-    <body>
+    <body onload="getCars()">
         <header>
 			<div class="container">
 				<div id="branding">
@@ -21,21 +21,20 @@
 				<nav>
 					<div id="navigacija">
 						<ul>
-							<li class="current"><a href="index.html">Pocetna</a></li>
-							<li><a href="vozila.html">Vozila</a></li>
-							<li><a href="usluge.html">Usluga</a></li>
-							<li><a href="kontakt.html">Kontakt</a></li>
-							<div id="prijava">
+							<li><a href="index.html">Home</a></li>
+							<li class="current"><a href="vozila.html">Cars</a></li>
+							<li id="sign-out">
+								<p id="ispis"></p>
+								<button id="signOut_btn">Sign Out</button>
+								<button id="register_admin">Register Admin</button>
+							</li>
+							<li id="prijava">
 								<input id="username" type="text" placeholder="Username">
 								<input id="password" type="password" placeholder="Password">
-								<button id="login-btn" type="submit">Sign in!</button>
+								<button id="login-btn" type="submit">Sign in</button>
 								<button id="modal-btn" class="button">Register</button>
-							</div>
+							</li>
 						</ul>
-					</div>
-					<div>
-						<button id="signOut_btn">Sign Out!</button>
-						<p id="ispis"></p>
 					</div>
 				</nav>
 			</div>
@@ -47,91 +46,135 @@
 						<h2>Registration</h2>
 					</div>
 					<div class="modal-body">
-						<input id="reg_name" type="text" placeholder="Name">
-						<input id="reg_lastname" type="text" placeholder="Last Name">
-						<input id="reg_username" type="text" placeholder="Username">
-						<input id="reg_password" type="password" placeholder="Password">
+						<input class="modal-row" id="reg_name" type="text" placeholder="Name">
+						<input class="modal-row" id="reg_lastname" type="text" placeholder="Last Name">
+						<input class="modal-column" id="reg_username" type="text" placeholder="Username">
+						<input class="modal-column" id="reg_password" type="password" placeholder="Password">
 						<button id="modal_reg_btn" type="submit">Register</button>
-						<div id="reg_ispis"></div>
+					</div>
+				</div>
+			</div>
+			<div id="my-modal-admin" class="modal">
+				<div class="modal-content">
+					<div class="modal-header">
+						<span class="close">&times;</span>
+						<h2>Registration Admin</h2>
+					</div>
+					<div class="modal-body">
+						<input class="modal-row" id="admin_reg_name" type="text" placeholder="Name">
+						<input class="modal-row" id="admin_reg_lastname" type="text" placeholder="Last Name">
+						<input class="modal-column" id="admin_reg_username" type="text" placeholder="Username">
+						<input class="modal-column" id="admin_reg_password" type="password" placeholder="Password">
+						<button id="admin_modal_reg_btn" type="submit">Register</button>
+					</div>
+				</div>
+			</div>
+			<div id="my-modal-rezervacija" class="modal">
+				<div class="modal-content">
+					<div class="modal-header">
+						<span class="close" id="close-rezervacija">&times;</span>
+						<h2>Reserve</h2>
+					</div>
+					<div class="modal-body-rezervacije">
+						<p>Pick up date:</p>
+						<input type="date" id="pick-up-date-rezervacije">
+						<p>Drop off date:</p>
+						<input type="date" id="drop-off-date-rezervacije">
+						<button id="final-rezervacija" type="submit">Reserve</button>
+					</div>
+				</div>
+			</div>
+			<div id="my-modal-izmena" class="modal">
+				<div class="modal-content">
+					<div class="modal-header">
+						<span class="close" id="close-izmena">&times;</span>
+						<h2>Change Car</h2>
+					</div>
+					<div class="modal-body-izmena">
+						<div id="row-1">
+							<select id="marka_auta">
+								<option>Volkswagen</option>
+								<option>Nissan</option>
+								<option>Toyota</option>
+								<option>Ford</option>
+								<option>Hyundai</option>
+								<option>Mitsubishi</option>
+								<option>Dacia</option>
+								<option>Dodge</option>
+								<option>BMW</option>
+								<option>Mercedes</option>
+								<option>Audi</option>
+							</select><br>
+							<input type="text" id="model_auta" placeholder="Model"><br>
+							<input type="text" id="cena_auta" placeholder="Price"><br>
+							<select id="tip_auta">
+								<option>Sedan</option>
+								<option>Pick up</option>
+								<option>Jeep</option>
+								<option>Minivan</option>
+								<option>Hatchback</option>
+								<option>Limusine</option>
+							</select><br>
+						</div>
+						<div id="row-2">
+							<select id="broj_vrata">
+								<option>2 doors</option>
+								<option>4 doors</option>
+							</select><br>
+							<select id="broj_osoba">
+								<option>2 persons</option>
+								<option>4 persons</option>
+								<option>5 persons</option>
+								<option>6 persons</option>
+							</select><br>
+							<select id="broj_kofera">
+								<option>1 suitcase</option>
+								<option>2 suitcase</option>
+								<option>3 suitcase</option>
+								<option>4 suitcase</option>
+								<option>5 suitcase</option>
+								<option>6 suitcase</option>
+							</select>
+						</div>
+						<div id="row-3">
+							<div id="menjac-div">
+								<input onclick="menjacCheckbox()" type="radio" id="manuelni" value="Manuelni" name="menjac">
+								<label for="manuelni">Manual</label><br>
+								<input onclick="menjacCheckbox()" type="radio" id="automatski" value="Automatski" name="menjac">
+								<label for="automatski">Automatic</label><br>
+							</div>
+							<div id="klima-div">
+								<input onclick="klimaCheckbox()" type="radio" id="klima" value="Air condition" name="klima">
+								<label for="klima">Air condition</label><br>
+								<input onclick="klimaCheckbox()" type="radio" id="bez_klime" value="No Air condition" name="klima">
+								<label for="bez_klime">No Air condition</label><br>
+							</div>
+							<div id="gorivo-div">
+								<input onclick="gorivoCheckbox()" type="radio" id="diesel" value="Diesel" name="gorivo">
+								<label for="diesel">Diesel</label><br>
+								<input onclick="gorivoCheckbox()" type="radio" id="benzin" value="Benzin" name="gorivo">
+								<label for="benzin">Gasoline</label><br>
+							</div>
+						</div>
+						<div id="row-4">
+							<button class="izmena-btn" id="izmeniAuto" type="submit">Change</button>
+							<button class="izmena-btn" id="dodajAuto" type="submit">Add Car</button>
+						</div>
 					</div>
 				</div>
 			</div>
         </header>
-        <section>
-			<div class="flex-container">
-                <div class="car">
-					<div class="car-img">
-						<img src="./img/car.png">
-					</div>
-					<h3>Nissan GT</h3>
-					<h4>Supercar</h4>
-					<p>5.000din/dan</p>
-					<div id="car-buttons">
-						<i style="font-size:20px" class="fa">&#xf085;</i><p>Automatik</p>
-						<i style="font-size:20px" class="fa">&#xf1b9;</i><p>4 vrata</p>
-						<i style="font-size:20px" class="fa">&#xf007;</i><p>4 osobe</p>
-						<i style="font-size:20px" class="fa">&#xf0f2;</i><p>2 kufera</p>
-						<i style="font-size:20px" class="fa">&#xf2dc;</i><p>Klima</p>
-						<i style='font-size:20px' class='fas'>&#xf52f;</i><p>Benzin</p>
-						<button type="submit" id="rezervacija-auta">Rezervisi</button>
-					</div>
-				</div>
-				<div class="car">
-					<div class="car-img">
-						<img src="./img/car2.png">
-					</div>
-					<h3>Audi TT</h3>
-					<h4>Sport Coupe</h4>
-					<p>4.999din/dan</p>
-					<div id="car-buttons">
-						<i style="font-size:20px" class="fa">&#xf085;</i><p>Manuelni</p>
-						<i style="font-size:20px" class="fa">&#xf1b9;</i><p>2 vrata</p>
-						<i style="font-size:20px" class="fa">&#xf007;</i><p>2 osobe</p>
-						<i style="font-size:20px" class="fa">&#xf0f2;</i><p>1 kufera</p>
-						<i style="font-size:20px" class="fa">&#xf2dc;</i><p>Klima</p>
-						<i style='font-size:20px' class='fas'>&#xf52f;</i><p>Benzin</p>
-						<button type="submit" id="rezervacija-auta">Rezervisi</button>
-					</div>
-				</div>
-				<div class="car">
-					<div class="car-img">
-						<img src="./img/car3.png">
-					</div>
-					<h3>Hyundai</h3>
-					<h4>Pick up</h4>
-					<p>3.999din/dan</p>
-					<div id="car-buttons">
-						<i style="font-size:20px" class="fa">&#xf085;</i><p>Automatik</p>
-						<i style="font-size:20px" class="fa">&#xf1b9;</i><p>4 vrata</p>
-						<i style="font-size:20px" class="fa">&#xf007;</i><p>4 osobe</p>
-						<i style="font-size:20px" class="fa">&#xf0f2;</i><p>3 kufera</p>
-						<i style="font-size:20px" class="fa">&#xf2dc;</i><p>Klima</p>
-						<i style='font-size:20px' class='fas'>&#xf52f;</i><p>Benzin</p>
-						<button type="submit" id="rezervacija-auta">Rezervisi</button>
-					</div>
-				</div>
-				<div class="car">
-					<div class="car-img">
-						<img src="img/car4.png">
-					</div>
-					<h3>BMW X5</h3>
-					<h4>Jeep</h4>
-					<p>6.999din/dan</p>
-					<div id="car-buttons">
-						<i style="font-size:20px" class="fa">&#xf085;</i><p>Automatik</p>
-						<i style="font-size:20px" class="fa">&#xf1b9;</i><p>4 vrata</p>
-						<i style="font-size:20px" class="fa">&#xf007;</i><p>4 osobe</p>
-						<i style="font-size:20px" class="fa">&#xf0f2;</i><p>4 kufera</p>
-						<i style="font-size:20px" class="fa">&#xf2dc;</i><p>Klima</p>
-						<i style='font-size:20px' class='fas'>&#xf52f;</i><p>Dizel</p>
-						<button type="submit" id="rezervacija-auta">Rezervisi</button>
-					</div>
-				</div>
-			</div>
+        <section id="showcaseVozila">
 			
 		</section>
         <footer>
-			<p>Rent a car, Copyright &copy; 2019</p>
+			<p>Rent a car, Copyright &copy; 2020</p>
+			<div id="social-icons">
+				<a href="blank"><i style="font-size: 30px;" class="fab fa-instagram-square"></i></a>
+				<a href="blank"><i style="font-size: 30px;" class="fab fa-facebook"></i></a>
+				<a href="blank"><i style="font-size: 30px;" class="fab fa-twitter"></i></a>
+				<a href="blank"><i style="font-size: 30px;" class="fab fa-github"></i></a>
+			</div>
 		</footer>
 		<script src="main.js"></script>
     </body>
