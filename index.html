@@ -7,6 +7,7 @@
 			  crossorigin="anonymous">
 		</script>
 		<link rel="stylesheet" href="style.css"> 
+		<script src='https://kit.fontawesome.com/a076d05399.js'></script> 
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
 		<title>Rent a car | Welcome</title>
@@ -21,21 +22,20 @@
 				<nav>
 					<div id="navigacija">
 						<ul>
-							<li class="current"><a href="index.html">Pocetna</a></li>
-							<li><a href="vozila.html">Vozila</a></li>
-							<li><a href="usluge.html">Usluga</a></li>
-							<li><a href="kontakt.html">Kontakt</a></li>
-							<div id="prijava">
+							<li class="current"><a href="index.html">Home</a></li>
+							<li><a href="vozila.html">Cars</a></li>
+							<li id="sign-out">
+								<p id="ispis"></p>
+								<button id="signOut_btn">Sign Out</button>
+								<button id="register_admin">Register Admin</button>
+							</li>
+							<li id="prijava">
 								<input id="username" type="text" placeholder="Username">
 								<input id="password" type="password" placeholder="Password">
 								<button id="login-btn" type="submit">Sign in!</button>
 								<button id="modal-btn" class="button">Register</button>
-							</div>
+							</li>
 						</ul>
-					</div>
-					<div>
-						<button id="signOut_btn">Sign Out!</button>
-						<p id="ispis"></p>
 					</div>
 				</nav>
 			</div>
@@ -47,39 +47,60 @@
 						<h2>Registration</h2>
 					</div>
 					<div class="modal-body">
-						<input id="reg_name" type="text" placeholder="Name">
-						<input id="reg_lastname" type="text" placeholder="Last Name">
-						<input id="reg_username" type="text" placeholder="Username">
-						<input id="reg_password" type="password" placeholder="Password">
+						<input class="modal-row" id="reg_name" type="text" placeholder="Name">
+						<input class="modal-row" id="reg_lastname" type="text" placeholder="Last Name">
+						<input class="modal-column" id="reg_username" type="text" placeholder="Username">
+						<input class="modal-column" id="reg_password" type="password" placeholder="Password">
 						<button id="modal_reg_btn" type="submit">Register</button>
+					</div>
+				</div>
+			</div>
+			<div id="my-modal-admin" class="modal">
+				<div class="modal-content">
+					<div class="modal-header">
+						<span class="close">&times;</span>
+						<h2>Registration Admin</h2>
+					</div>
+					<div class="modal-body">
+						<input class="modal-row" id="admin_reg_name" type="text" placeholder="Name">
+						<input class="modal-row" id="admin_reg_lastname" type="text" placeholder="Last Name">
+						<input class="modal-column" id="admin_reg_username" type="text" placeholder="Username">
+						<input class="modal-column" id="admin_reg_password" type="password" placeholder="Password">
+						<button id="admin_modal_reg_btn" type="submit">Register</button>
+					</div>
+				</div>
+			</div>
+			<div id="my-modal-rezervacija" class="modal">
+				<div class="modal-content">
+					<div class="modal-header">
+						<span class="close" id="close-rezervacija">&times;</span>
+						<h2>Reserve</h2>
+					</div>
+					<div class="modal-body-rezervacije">
+						<input type="date" id="pick-up-date-rezervacije">
+						<input type="date" id="drop-off-date-rezervacije">
+						<button id="final-rezervacija" type="submit">Reserve</button>
 						<div id="reg_ispis"></div>
 					</div>
 				</div>
 			</div>
 		</header>
-		
-		
 		<section id="showcase">
-			<div class="container">
-				<h1>Affordable rent a car</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-			</div>
 			<section id="search">
 				<div id="search-bar">
-					<h2>Potrazi najam automobila</h2>
+					<h1>Search for Car</h1>
 					<div id="pick-up-date">
-						<p>Preuzimanje</p>
+						<p>Pick up</p>
 						<input id="date_preuzimanje" type="date">
 					</div>
 					<div id="drop-off-date">
-						<p>Povratak</p>
+						<p>Drop off</p>
 						<input id="date_povratak" type="date">
 					</div>
 					<button  id="trazi_najam" type="submit">Search</button>
 				</div>
 			</section>
 		</section>
-		
 		<section id="newsletter">
 			<div class="container">
 				<h1>Subscribe to our newsletter</h1>
@@ -89,20 +110,8 @@
 				</form>
 			</div>
 		</section>
-		<section id="slideshow">
-			<div class="slide" id="slide1">
-			
-			</div>
-			<div class="slide" id="slide2">
-			
-			</div>
-			<div class="slide" id="slide3">
-			
-			</div>
-		</section>
-		
 		<section id="boxes">
-			<div class="container">
+			<div id="container-logo" class="container">
 				<div class="box">
 					<img src="./img/audi.png">
 					<h3>Audi</h3>
@@ -121,7 +130,13 @@
 			</div>
 		</section>
 		<footer>
-			<p>Rent a car, Copyright &copy; 2019</p>
+			<p>Rent a car, Copyright &copy; 2020</p>
+			<div id="social-icons">
+				<a href="blank"><i style="font-size: 30px;" class="fab fa-instagram-square"></i></a>
+				<a href="blank"><i style="font-size: 30px;" class="fab fa-facebook"></i></a>
+				<a href="blank"><i style="font-size: 30px;" class="fab fa-twitter"></i></a>
+				<a href="blank"><i style="font-size: 30px;" class="fab fa-github"></i></a>
+			</div>
 		</footer>
 		<script src="main.js"></script>
 	</body>
